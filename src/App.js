@@ -8,25 +8,10 @@ class App extends React.Component {
     this.state = {
       mount: false
     }
-    // this.mountSquare = () => this.setState({mount: true})
-    // this.unmountSquare = () => this.setState({mount: false})
-  }
-  mountSquare = () => {
-    this.setState({
-      mount:true
-    })
-    console.log(this.state)
   }
 
-  unmountSquare = () => {
-    this.setState({
-      mount:false
-    })
-    console.log(this.state)
-  }
-
-  // mountSquare = () => this.setState({mount: true})
-  // unmountSquare = () => this.setState({mount: false})
+  mountSquare = () => this.setState({mount: true})
+  unmountSquare = () => this.setState({mount: false})
  
   render() {
     return (

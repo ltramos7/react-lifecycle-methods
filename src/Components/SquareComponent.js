@@ -41,7 +41,6 @@ class SquareComponent extends Component {
         console.log("render() method fired")
         return (
             <div>
-                <h1>Test Component Here</h1>
                 <h3>Color is {this.state.color}</h3>
                 <div className="square" style={{backgroundColor: this.state.color}}/>
                 <div>

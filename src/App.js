@@ -1,17 +1,44 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import SquareComponent from "./Components/SquareComponent";
 
 class App extends React.Component {
+
+  constructor(){
+    super()
+    this.state = {
+      mount: false
+    }
+    // this.mountSquare = () => this.setState({mount: true})
+    // this.unmountSquare = () => this.setState({mount: false})
+  }
+  mountSquare = () => {
+    this.setState({
+      mount:true
+    })
+    console.log(this.state)
+  }
+
+  unmountSquare = () => {
+    this.setState({
+      mount:false
+    })
+    console.log(this.state)
+  }
+
+  // mountSquare = () => this.setState({mount: true})
+  // unmountSquare = () => this.setState({mount: false})
+ 
   render() {
     return (
       <div>
-        <SquareComponent />
+        <button onClick={this.mountSquare} disabled={this.state.mount}>Mount Square</button>
+        <button onClick={this.unmountSquare} disabled={!this.state.mount}>Unmount Square</button>
+        {this.state.mount? <SquareComponent/> : null}
       </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+// ReactDOM.render(<App />, document.getElementById("root"));
 
 export default App;

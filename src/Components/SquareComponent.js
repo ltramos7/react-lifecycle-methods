@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import '../index.css'
 
-class TestComponent extends Component {
+class SquareComponent extends Component {
 
     constructor(){
         console.log("constructor method fired")
         super()
         this.state = {
-            color: "blue"
+            color: "black"
         }
     }
 
@@ -24,7 +25,7 @@ class TestComponent extends Component {
 
     handleBlueClick = () => {
         console.log("Blue Button Clicked")
-        this.setState({color: "red"})
+        this.setState({color: "blue"})
     }
     handleOrangeClick = () => {
         console.log("Orange Button Clicked")
@@ -34,8 +35,6 @@ class TestComponent extends Component {
         console.log("Green Button Clicked")
         this.setState({color: "green"})
     }
-
-    
     
 
     render() {
@@ -44,6 +43,7 @@ class TestComponent extends Component {
             <div>
                 <h1>Test Component Here</h1>
                 <h3>Color is {this.state.color}</h3>
+                <div className="square" style={{backgroundColor: this.state.color}}/>
                 <div>
                     <p>Click the button to change the color.</p>
                     <button onClick={this.handleBlueClick}>Blue</button>
@@ -56,5 +56,5 @@ class TestComponent extends Component {
     }
 }
 
-export default TestComponent
+export default SquareComponent
 

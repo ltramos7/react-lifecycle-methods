@@ -2,6 +2,17 @@ import React from "react";
 import SquareComponent from "./Components/SquareComponent";
 
 class App extends React.Component {
+  constructor(){
+    console.log("App constructor method invoked")
+    super()
+    this.state = {
+      mount: false
+    }
+  }
+
+
+  mountSquare = () => this.setState({mount: true})
+  unmountSquare = () => this.setState({mount: false})
 
   render() {
     console.log("App render() method invoked")
@@ -13,18 +24,6 @@ class App extends React.Component {
       </div>
     );
   }
-
-  constructor(){
-    console.log("App constructor method invoked")
-    super()
-    this.state = {
-      mount: false
-    }
-  }
-
-  mountSquare = () => this.setState({mount: true})
-  unmountSquare = () => this.setState({mount: false})
- 
 }
 
 export default App;

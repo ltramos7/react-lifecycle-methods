@@ -2,27 +2,22 @@ import React, { Component } from 'react'
 import '../index.css'
 
 class SquareComponent extends Component {
-
     constructor(){
-        console.log("constructor method fired")
+        console.log("SquareComponent constructor method invoked")
         super()
         this.state = {
             color: "black"
         }
     }
-
     componentDidUpdate = () => {
-        console.log("componentDidUpdate() method fired")
+        console.log("SquareComponent componentDidUpdate() method invoked")
     }
-    
     componentWillUnmount= () => {
-        console.log("componentUnmount() method fired")
+        console.log("SquareComponent componentUnmount() method invoked")
     }
-
     componentDidMount = () => {
-        console.log("componentDidMount() method fired")
+        console.log("SquareComponent componentDidMount() method invoked")
     }
-
     handleBlueClick = () => {
         console.log("Blue Button Clicked")
         this.setState({color: "blue"})
@@ -36,9 +31,8 @@ class SquareComponent extends Component {
         this.setState({color: "green"})
     }
     
-
     render() {
-        console.log("render() method fired")
+        console.log("SquareComponent render() method invoked")
         return (
             <div>
                 <h3>Color is {this.state.color}</h3>
@@ -49,7 +43,6 @@ class SquareComponent extends Component {
                     <button onClick={this.handleOrangeClick}>Orange</button>
                     <button onClick={this.handleGreenClick}>Green</button>
                 </div>
-                
             </div>
         )
     }
